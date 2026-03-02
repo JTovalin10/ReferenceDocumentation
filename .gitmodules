@@ -1,0 +1,3 @@
+[submodule "MyFavoriteAlbums"]
+	path = MyFavoriteAlbums
+	url = https://github.com/JTovalin10/MyFavoriteAlbums.git
