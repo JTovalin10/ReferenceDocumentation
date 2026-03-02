@@ -24,6 +24,7 @@
     <a href="#band-comparison">band_album_comparison_chart</a>
     <a href="#missing-vinyl">missing_vinyl</a>
     <a href="#data-schema">Data Schema</a>
+    <a href="#faq">FAQ</a>
   </nav>
 
   <main class="api-main">
@@ -405,6 +406,37 @@ missing_vinyl(8.5)
           <pre><code>unique(album_data$Artist)
 # [1] "Radiohead"   "Arcade Fire" "Taylor Swift" ...</code></pre>
         </div>
+      </article>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="endpoint-section">
+      <h2>FAQ</h2>
+      <p class="section-desc">Common questions for end users and developers.</p>
+
+      <article class="endpoint-card">
+        <h3>Why doesn't my artist name work?</h3>
+        <p>Artist names are case-sensitive and must match exactly what is in the data. <code>"Radiohead"</code> is not the same as <code>"radiohead"</code>. Run <code>unique(album_data$Artist)</code> in R to see all valid names.</p>
+      </article>
+
+      <article class="endpoint-card">
+        <h3>How do I load the data?</h3>
+        <p>Set your working directory to the project folder, then run <code>album_data &lt;- read.csv("data/album-ranking.csv")</code>. You need <code>dplyr</code> for most functions. See <a href="#quick-start">Quick Start</a> for the full setup.</p>
+      </article>
+
+      <article class="endpoint-card">
+        <h3>I get an empty table. What's wrong?</h3>
+        <p>Check that the year or artist exists in your data. For <code>year_albums</code>, the year must be in <code>album_data$Year</code>. For artist functions, the name must match <code>album_data$Artist</code> exactly. Use <code>unique(album_data$Year)</code> and <code>unique(album_data$Artist)</code> to see valid values.</p>
+      </article>
+
+      <article class="endpoint-card">
+        <h3>Where is the Shiny app?</h3>
+        <p>Run <code>app.R</code> in RStudio to launch the web interface. The app loads the data and all function files automatically. Make sure your working directory is the project folder.</p>
+      </article>
+
+      <article class="endpoint-card">
+        <h3>Where can I get more technical detail?</h3>
+        <p>The <a href="https://github.com/JTovalin10/MyFavoriteAlbums" target="_blank" rel="noopener">MyFavoriteAlbums source code</a> has detailed comments for each function: behavior, examples, exceptions, returns, and parameter specs with input expectations.</p>
       </article>
     </section>
   </main>
